@@ -16,11 +16,11 @@ class LogViewerService
 
     protected ?Collection $_cachedFiles = null;
 
-    protected mixed $authCallback;
+    protected $authCallback;
 
     protected int $maxLogSizeToDisplay = self::DEFAULT_MAX_LOG_SIZE_TO_DISPLAY;
 
-    protected mixed $hostsResolver;
+    protected $hostsResolver;
 
     protected function getFilePaths(): array
     {
@@ -263,7 +263,7 @@ class LogViewerService
         }
 
         if (class_exists(InstalledVersions::class)) {
-            return InstalledVersions::getPrettyVersion('opcodesio/log-viewer') ?? 'dev-main';
+            return InstalledVersions::getPrettyVersion('elielelie/log-viewer') ?? 'dev-main';
         } else {
             $composerJson = json_decode(file_get_contents(__DIR__.'/../composer.json'), true);
 

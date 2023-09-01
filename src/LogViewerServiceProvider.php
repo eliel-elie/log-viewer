@@ -80,7 +80,7 @@ class LogViewerServiceProvider extends ServiceProvider
         Route::group([
             'domain' => config('log-viewer.route_domain', null),
             'prefix' => Str::finish(config('log-viewer.route_path'), '/').'api',
-            'namespace' => 'Opcodes\LogViewer\Http\Controllers',
+            'namespace' => 'Elielelie\LogViewer\Http\Controllers',
             'middleware' => config('log-viewer.api_middleware', null),
         ], function () {
             $this->loadRoutesFrom(self::basePath('/routes/api.php'));
@@ -89,7 +89,7 @@ class LogViewerServiceProvider extends ServiceProvider
         Route::group([
             'domain' => config('log-viewer.route_domain', null),
             'prefix' => config('log-viewer.route_path'),
-            'namespace' => 'Opcodes\LogViewer\Http\Controllers',
+            'namespace' => 'Elielelie\LogViewer\Http\Controllers',
             'middleware' => config('log-viewer.middleware', null),
         ], function () {
             $this->loadRoutesFrom(self::basePath('/routes/web.php'));

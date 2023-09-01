@@ -18,6 +18,8 @@ class LogIndex
     const DEFAULT_CHUNK_SIZE = 20_000;
 
     public string $identifier;
+    public LogFile $file;
+    protected ?string $query = null;
 
     protected int $nextLogIndexToCreate;
 
@@ -25,15 +27,16 @@ class LogIndex
 
     protected int $lastScannedIndex;
 
-    public function __construct(
-        public LogFile $file,
-        protected ?string $query = null
-    ) {
+    public function __construct(LogFile $file, ?string $query = null) {
+
+        $this->file = $file;
+        $this->query = $query;
+
         $this->identifier = Utils::shortMd5($this->query ?? '');
         $this->loadMetadata();
     }
 
-    public function addToIndex(int $filePosition, int|CarbonInterface $timestamp, string $severity, int $index = null): int
+    public function addToIndex(int $filePosition, $timestamp, string $severity, int $index = null): int
     {
         $logIndex = $index ?? $this->nextLogIndexToCreate ?? 0;
 

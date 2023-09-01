@@ -11,7 +11,7 @@ use Elielelie\LogViewer\LogFolder;
 use Elielelie\LogViewer\LogFolderCollection;
 
 /**
- * @see \Opcodes\LogViewer\LogViewerService
+ * @see \Elielelie\LogViewer\LogViewerService
  *
  * @method static string version()
  * @method static bool assetsAreCurrent()

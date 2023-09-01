@@ -5,7 +5,7 @@ namespace Elielelie\LogViewer\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Gate;
-use Opcodes\LogViewer\Facades\LogViewer;
+use Elielelie\LogViewer\Facades\LogViewer;
 use Elielelie\LogViewer\Http\Resources\LogFileResource;
 
 class FilesController

@@ -36,7 +36,7 @@ class Log
         int $index,
         string $text,
         string $fileIdentifier,
-        int $filePosition,
+        int $filePosition
     ) {
         $this->index = $index;
         $this->fileIdentifier = $fileIdentifier;

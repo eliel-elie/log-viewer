@@ -26,7 +26,7 @@ class Utils
      * Calculate the memory footprint of a given variable.
      * CAUTION: This will increase the memory usage by that same amount because it makes a copy of this variable.
      */
-    public static function sizeOfVar(mixed $var): int
+    public static function sizeOfVar($var): int
     {
         $start_memory = memory_get_usage();
         $tmp = unserialize(serialize($var));
@@ -38,7 +38,7 @@ class Utils
      * Calculate the memory footprint of a given variable and return it as a human-friendly string.
      * CAUTION: This will increase the memory usage by that same amount because it makes a copy of this variable.
      */
-    public static function sizeOfVarInMB(mixed $var): string
+    public static function sizeOfVarInMB($var): string
     {
         return self::bytesForHumans(self::sizeOfVar($var));
     }
@@ -74,7 +74,7 @@ class Utils
         return substr(md5($content), -$length, $length);
     }
 
-    public static function glob_recursive($pattern, $flags = 0): bool|array
+    public static function glob_recursive($pattern, $flags = 0)
     {
         $files = glob($pattern, $flags);
 

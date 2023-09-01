@@ -10,13 +10,12 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 class LogFolder
 {
     public string $identifier;
+    public string $path;
 
     protected mixed $files;
 
-    public function __construct(
-        public string $path,
-        mixed $files,
-    ) {
+    public function __construct(string $path, $files) {
+        $this->path = $path;
         $this->identifier = Utils::shortMd5($path);
         $this->files = new LogFileCollection($files);
     }

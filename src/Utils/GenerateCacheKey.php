@@ -2,13 +2,13 @@
 
 namespace Elielelie\LogViewer\Utils;
 
-use Opcodes\LogViewer\Facades\LogViewer;
+use Elielelie\LogViewer\Facades\LogViewer;
 use Elielelie\LogViewer\LogFile;
 use Elielelie\LogViewer\LogIndex;
 
 class GenerateCacheKey
 {
-    public static function for(mixed $object, string $namespace = null): string
+    public static function for($object, string $namespace = null): string
     {
         $key = '';
 

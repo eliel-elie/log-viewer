@@ -33,7 +33,7 @@ trait CanFilterIndex
         return $this->query;
     }
 
-    public function forDateRange(int|CarbonInterface $from = null, int|CarbonInterface $to = null): self
+    public function forDateRange($from = null, $to = null): self
     {
         if ($from instanceof CarbonInterface) {
             $from = $from->timestamp;
@@ -49,7 +49,7 @@ trait CanFilterIndex
         return $this;
     }
 
-    public function forLevels(string|array $levels = null): self
+    public function forLevels($levels = null): self
     {
         if (is_string($levels)) {
             $levels = [$levels];
