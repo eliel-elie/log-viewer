@@ -19,7 +19,7 @@ class MultipleLogReader
 
     protected ?array $levels = null;
 
-    public function __construct(mixed $files)
+    public function __construct($files)
     {
         if ($files instanceof LogFile) {
             $this->fileCollection = new LogFileCollection([$files]);

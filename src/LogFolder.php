@@ -12,7 +12,7 @@ class LogFolder
     public string $identifier;
     public string $path;
 
-    protected mixed $files;
+    protected $files;
 
     public function __construct(string $path, $files) {
         $this->path = $path;
