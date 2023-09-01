@@ -43,7 +43,7 @@ class FoldersController
 
         abort_if(is_null($folder), 404);
 
-        $folder?->files()->each->clearCache();
+        $folder->files()->each->clearCache();
 
         return response()->json(['success' => true]);
     }
